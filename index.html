@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Registration Form</h1>
+            <p class="subtitle">Please fill in all required fields</p>
+            
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="firstName">First Name <span class="required">*</span></label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last Name <span class="required">*</span></label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number <span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address <span class="required">*</span></label>
+                    <input type="text" id="address" name="address" placeholder="Enter your address" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="city">City <span class="required">*</span></label>
+                    <input type="text" id="city" name="city" placeholder="Enter your city" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="state">State/Province <span class="required">*</span></label>
+                    <input type="text" id="state" name="state" placeholder="Enter state" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="country">Country <span class="required">*</span></label>
+                    <input type="text" id="country" name="country" placeholder="Enter your country" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Gender <span class="required">*</span></label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth <span class="required">*</span></label>
+                    <input type="date" id="dob" name="dob" required>
+                    <span class="error-message"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Additional Information</label>
+                    <textarea id="message" name="message" placeholder="Enter any additional information" rows="4"></textarea>
+                </div>
+
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the terms and conditions <span class="required">*</span></label>
+                    <span class="error-message"></span>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Registration</button>
+            </form>
+        </div>
+
+        <!-- Result Display Section -->
+        <div id="resultContainer" class="result-container hidden">
+            <div class="result-content">
+                <div class="result-header">
+                    <h2>Registration Successful!</h2>
+                    <p>Your information has been registered successfully.</p>
+                </div>
+
+                <div class="result-body">
+                    <div class="result-item">
+                        <span class="label">Full Name:</span>
+                        <span class="value" id="displayName"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Email:</span>
+                        <span class="value" id="displayEmail"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Phone:</span>
+                        <span class="value" id="displayPhone"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Address:</span>
+                        <span class="value" id="displayAddress"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">City:</span>
+                        <span class="value" id="displayCity"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">State/Province:</span>
+                        <span class="value" id="displayState"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Country:</span>
+                        <span class="value" id="displayCountry"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Gender:</span>
+                        <span class="value" id="displayGender"></span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Date of Birth:</span>
+                        <span class="value" id="displayDob"></span>
+                    </div>
+                    <div class="result-item" id="messageItem" style="display:none;">
+                        <span class="label">Additional Information:</span>
+                        <span class="value" id="displayMessage"></span>
+                    </div>
+                </div>
+
+                <div class="result-footer">
+                    <button class="reset-btn" onclick="resetForm()">Submit Another Registration</button>
+                    <button class="print-btn" onclick="window.print()">Print</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
